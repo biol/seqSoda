@@ -1,0 +1,127 @@
+Situazione aggiornata vasche:
+------------------------------
+      <position id="15" mm="14720" name="TANK 4A "  dscr="ALKALINE DEGRE"  hasThermo="1"  rem="H" />
+      <position id="16" mm="16120" name="TANK 4B "  dscr="ALKALINE DEGRE" />
+      <position id="17" mm="18120" name="TANK 5  "  dscr="ETCHING  E6"     hasThermo="2"  rem="HC" />
+      <position id="18" mm="20170" name="TANK 6  "  dscr="ETCHING  E6"     hasThermo="3"  rem="HC" />
+      <position id="19" mm="22220" name="TANK 7  "  dscr="PICKLING E0"     hasThermo="4"  rem="HC" />
+      <position id="20" mm="24220" name="TANK 8  "  dscr="STATIC RINSING"  hasThermo="5"  rem="HC" />
+      <position id="21" mm="25570" name="TANK 9  "  dscr="RINSING" />
+      <position id="22" mm="26680" name="TANK 10 "  dscr="RINSING" hasDevice="1" />
+
+
+TCrane: tempo medio di prel + trasl + depo del CP1 (es. 100secs)
+TMovSoda: tempo totale dal prelievo da T5 a prelievo da T10 (es. 100+20+100+20+100+20+60=420secs - 60= prel.CP2 da T10)
+serie di n barre pronte gialle nella linea depositi: sequenza ottimale "statica", dopodichè depo 1÷9 FIFO
+diciamo che ne abbiamo già scelta una che ha un tempo di soda TS1 (es. 400secs)
+quale è la seconda? analizzo i TSi (for i := 2 to n), cioè gli altri tempi di soda.
+IF abs(TS1 - TSi - TCarro) > TMovSoda THEN i è la mia seconda barra
+
+Per la terza barra:
+IF (TS1 - TS2) < TMovSoda allora il confronto diventa
+  IF abs(TS2 - TSi - TCarro) > TMovSoda THEN ... 
+  perchè mi è rimasta dentro la soda la barra 2
+  ==> quindi la barra 2 ha preso il posto della barra 1 nei confronti
+ELSE devo usare
+  IF abs(TS1 - TMovSoda - TSi - TCarro) > TMovSoda THEN ... 
+  perchè mi è rimasta ancora dentro la soda la barra 1
+  ==> quindi la barra 1 mantiene il suo ruolo nei confronti
+e così scelgo la terza barra (a parità di tempo soda si prende la barra più vecchia).
+
+
+specifiche
+==========
+
+premessa: 
+  TSingleMov: tipico tempo di prelievo + traslazioner + deposito (es.100secs)
+  TTotalMov : tipico tempo di attraversamento vasche soda (es.420secs)
+
+precondizioni
+  carrello trasferta ready AND
+  non esistono barre blu in 120÷149 AND
+  esistono barre gialle in 120÷149 AND 
+  esistono depositi vuoti in 3÷11
+else exit (cfr   if noPrecondition the exit;)
+
+finalità:
+  decidere quale barra gialla in 120÷149 deve diventare blu 
+  ed essere inserita nella sequenza di trattamento
+  (cfr candidateBar.lauchInProduction)
+
+calcolo:
+  esiste cancello "PF" (prelievoFuturo) con TTotalMov secs tra un prelievo e l'altro
+  esiste sequenza barre blu in posizione da 1 (arrivo carrello trasferta) a 19 (ultima soda)
+  -- scarto eventuali barre non blu o non in 1÷19
+
+  sviluppo calendario prelievi da 17÷19 (soda) sulla base della sequenza e del cancello "PF"
+  -- la prima barra entra a T0 e viene prelevata a T1 = T0 + suo tempo soda
+     DropMAX   := T0
+     PickupMAX := PickupPrec := T1
+  -- la successiva barra entra a Tx >= DropMAX + TSingleMov e viene prelevata a Ty = Tx + suo tempo soda 
+  -- vale sempre (abs(PickupPrec - Ty) >= TTotalMov) AND (abs(PickupMAX - Ty) >= TTotalMov) dopodichè:
+     DropMAX := Tx
+     PickupPrec := Ty
+     if PickupMAX < PickupPrec then PickupMAX := PickupPrec
+  
+  alla fine dello sviluppo ho un DropMAX, un PickupPrec e un PickupMAX
+  per ogni barra gialla calcolo l'ipotetico Ty, tempo di prelievo
+  scelgo la barra con il Ty minore, l'aggiungo alla sequenza e la faccio diventare BLU
+
+function TreatSEQ_calcPickup(pSingleMov, pTotalMov, pDropMAX, pPickupPrec, pPickupMax, pEtching: integer): integer;
+(* ALL parameters in seconds
+  pSingleMov : total duration of pickup + traslation + drop (es. 100)
+  pTotalMov  : total duration from pickup from Etching to pickup from last rinsing (es. 420)
+               this is also the futurePickupGate parameter and specifies the minimum
+               interval between 2 consecutive pickups from any soda tanks
+  pDropMAX   : greatest drop so far (begin of treatment for previous bar)
+  pPickupPrev: pickup for previous bar (end of treatment for previous bar)
+  pPickupMax : greatest pickup so far (greatest end of treatment so far)
+  pEtching   : duration of soda for this bar
+  ==> returns the minimum pickup for this bar
+*)
+var myDrop, myPickup: integer;   // drop and pickup for current bar
+begin
+  myDrop := pDropMAX + pSingleMov;  // this bar could enter ASAP after previous bar drop
+  // lable QUI:
+  myPickup := myDrop + pEtching;
+  while (abs(myPickup - pPickupPrev) < pTotalMov) or (abs(myPickup - pPickupMAX) < pTotalMov) do begin
+    // this pickup if not faraway enough from existing pickups
+    if pPickupPrev < pPickupMAX then begin
+      myPickup := max(myPickup, pPickupPrev + pTotalMov);   // cannot shrink, iterate ...
+      pPickupPrev := pPickupMAX;  // will not pass here anymore
+    end else begin
+      myPickup := max(myPickup, pPickupMAX + pTotalMov);   // cannot shrink, success !!!
+    end;
+  end;
+  // myDrop := myPickup - pEtching;   
+  // NON controllare che questo prelievo non cada quando il carro è occupato ...
+  // se capita dovrei portarlo avanti di quanto basta e ripartire da "QUI:" ma NON lo faccio
+  result := myPickup
+end;
+
+Initialize:
+  SingleMov, TotalMov: una-tantum
+  DropMAX, PickupPrec, PickupMax: ZERO or from TreatmentQueue;
+
+loop:
+  if noPrecondition the exit;
+   checkTreatmentQueue   // rebuild DropMAX, PickupPrec, PickupMax (or take for granted ...) 
+
+  candidateBar  := 0;
+  candidateDrop := 0
+  for each B yellowBar:
+    myDrop := TreatSEQ_calcPickup(SingleMov, TotalMov, DropMAX, PickupPrec, PickupMax, B.etching);
+    if (candidateBar = 0) or (candidateDrop > myDrop) then begin
+      candidateBar := B; candidateDrop := myDrop;
+    end;
+  end;
+  candidateBar.lauchInProduction (add to TreatmentQueue, make it blue)
+
+finalize ... bisogna che la TreatmentQueue sia in salvata e recuperata al restart del programma
+
+
+
+Cancelli usati durante la simulazione (popsizioni già corrette, +1):
+1) bet!. . : gatePositions="17-19" secsBetweenPickup=540
+2) alcaline: gatePositions="17-22" maxBars="3"
+

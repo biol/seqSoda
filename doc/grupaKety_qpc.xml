@@ -1,0 +1,219 @@
+<opcSimu plantName="grupaKety" Release="????" >
+<server id="OPC.SimaticNET.1" separator="" >
+
+<group id="S7:[Main]" dscr="TraslLock" >
+  <item id="DB55,X34.6" isBool="1" caption="TraslLock 1: dripping c/o tc 63" />
+  <item id="DB55,X34.7" isBool="1" caption="TraslLock 2: dripping c/o tc 68" />
+  <item id="DB55,X37.0" isBool="1" caption="TraslLock 3: ws1 94/95" />
+  <item id="DB55,X37.1" isBool="1" caption="TraslLock 4: ws2 100/101" />
+  <item id="DB55,X37.2" isBool="1" caption="TraslLock 5: ws3 106/107" />
+  <item id="DB55,X37.3" isBool="1" caption="TraslLock 6: ws4 112/113" />
+  <item id="DB55,X37.4" isBool="1" caption="TraslLock 7: ws5 118/119" />
+</group>
+
+
+<group id="S7:[Main]DB212," dscr="DosingPumps">
+  <item id="DINT%d" caption="AutoReqSec"      isDouble="1" low="0"  size="22"  count="18" />
+  <item id="DINT%d" caption="AutoSecDosed"    isDouble="1" low="4"  size="22"  count="18" />
+  <item id="DINT%d" caption="AutoActivThresh" isDouble="1" low="8"  size="22"  count="18" />
+  <item id="DINT%d" caption="ManReqSec"       isDouble="1" low="12" size="22"  count="18" />
+  <item id="DINT%d" caption="ManSecDosed"     isDouble="1" low="16" size="22"  count="18" />
+  <item id="B%d"    caption="Status"                       low="20" size="22"  count="18" />
+  <item id="X%d.0"  caption="Enabled"         isBool="1"   low="21" size="22"  count="18" />
+  <item id="X%d.1"  caption="TankMinLevel"    isBool="1"   low="21" size="22"  count="18" />
+  <item id="X%d.2"  caption="ResGlobalCnt"    isBool="1"   low="21" size="22"  count="18" />
+  <item id="X%d.3"  caption="ResPartCnt"      isBool="1"   low="21" size="22"  count="18" />
+</group>
+
+<group id="S7:[Main]" dscr="DatiVasche">
+  <item id="DB60,X%d.1" low="10"  size="14" count="16" caption="AutoModeCool"  isBool="1" />
+  <item id="DB60,X%d.2" low="10"  size="14" count="16" caption="AutoModeHeat"  isBool="1" />
+  <item id="DB61,INT%d" low="0"   size="6"  count="16" caption="MinTempAlarm" />
+  <item id="DB61,INT%d" low="2"   size="6"  count="16" caption="MaxTempAlarm" />
+  <item id="DB60,INT%d" low="4"   size="14" count="16" caption="DiffTempC"    />
+  <item id="DB60,INT%d" low="6"   size="14" count="16" caption="DiffTempH"    />
+  <item id="DB60,X%d.4" low="10"  size="14" count="16" caption="ManCoolRun"   isBool="1" />
+  <item id="DB60,X%d.6" low="10"  size="14" count="16" caption="ManHeatRun"   isBool="1" />
+  <item id="DB60,X%d.1" low="11"  size="14" count="16" caption="MaxTempAlarm" isBool="1" />
+  <item id="DB60,X%d.2" low="11"  size="14" count="16" caption="MinTempAlarm" isBool="1" />
+  <item id="DB60,X%d.0" low="11"  size="14" count="16" caption="HeatOut"      isBool="1" />
+  <item id="DB60,X%d.7" low="10"  size="14" count="16" caption="CoolOut"      isBool="1" />
+  <item id="DB60,INT%d" low="0"   size="14" count="16" caption="SetPoint"     />
+  <item id="DB60,INT%d" low="12"  size="14" count="16" caption="HeatStatus"   />
+  <item id="DB60,INT%d" low="2"   size="14" count="16" caption="Temperatura"  />
+</group>
+
+<group id="S7:[Main]DB33," dscr="P.enabled"   ><item id="X%d.7" caption="available"  low="0"  size="2" count="150" isBool="1" /></group>
+
+<group id="S7:[Main]DB58," dscr="tankdevice"  >
+	<item id="INT80" caption="spray 010"    />
+    <item id="INT82" caption="spray 019"    />
+    <item id="INT84" caption="dripping 063" />
+    <item id="INT86" caption="future"       />
+    <item id="INT88" caption="future"       />
+</group>
+
+<group id="S7:[Main]DB1,"  dscr="B.Position"   ><item id="INT%d"   low="0" size="2" count="70"              /></group>
+<group id="S7:[Main]DB2,"  dscr="B.Recipe"     ><item id="INT%d"   low="0" size="2" count="70"              /></group>
+<group id="S7:[Main]DB8,"  dscr="B.Priority"   ><item id="INT%d"   low="0" size="2" count="70"              /></group>
+<group id="S7:[Main]DB3,"  dscr="B.BaDT"       ><item id="X%d.0"   low="1" size="2" count="70" isBool="1"   /></group>
+<group id="S7:[Main]DB3,"  dscr="B.empty"      ><item id="X%d.1"   low="1" size="2" count="70" isBool="1"   /></group>
+<group id="S7:[Main]DB3,"  dscr="B.Available"  ><item id="X%d.7"   low="0" size="2" count="70" isBool="1"   /></group>
+<group id="S7:[Main]DB3,"  dscr="B.inTreatment"><item id="X%d.2"   low="1" size="2" count="70" isBool="1"   /></group>
+<group id="S7:[Main]DB4,"  dscr="B.RecipeSecs" ><item id="DINT%d"  low="0" size="4" count="70" isDouble="1" /></group>
+<group id="S7:[Main]DB5,"  dscr="B.TankSecs"   ><item id="DINT%d"  low="0" size="4" count="70" isDouble="1" /></group>
+<group id="S7:[Main]DB21," dscr="B.PositionLOG"><item id="INT%d"   low="0" size="2" count="70"              /></group>
+<group id="S7:[Main]DB25," dscr="B.SecsLOG"    ><item id="DINT%d"  low="0" size="4" count="70" isDouble="1" /></group>
+
+<group id="S7:[Main]DB58," dscr="carriage1" ignore="load carriage" >
+  <item id="INT0"  caption="ready"              />
+  <item id="INT4"  caption="millimeters"        />
+  <item id="X21.2" caption="reverse" isBool="1" />
+</group>
+
+<group id="S7:[Main]DB58," dscr="carriage2"  ignore="unload carriage" >
+  <item id="INT2"  caption="ready"              />
+  <item id="INT6"  caption="millimeters"        />
+  <item id="X21.3" caption="reverse" isBool="1" />
+</group>
+
+<group id="S7:[Main]DB161," dscr="workstations" rem="25jul2014: size changed, new field INT4 - status - e INT6 - barID - used in WS application" >
+  <item id="INT%d" caption="recipeID"                  low="2" size="10" count="6" />
+  <item id="INT%d" caption="reqCounter" rem="statoWS"  low="0" size="10" count="6" />
+  <item id="X%d.0" caption="reset"                     low="9" size="10" count="6" isBool="1" />
+</group>
+
+<group id="S7:[Main]DB81," dscr="ele_1" rem="oxi_1" >
+  <item id="X82.1"  caption="DisableGlobalStopPB"     isBool="1" sinceRel="32xx" />
+  <item id="X82.0"  caption="PcSetP_recolorRequested" isBool="1" sinceRel="32xx" />
+  <item id="INT10"  caption="In_Temperatura1" />
+  <item id="INT12"  caption="In_Temperatura2" />
+  <item id="INT14"  caption="In_Temperatura3" />
+  <item id="INT16"  caption="In_SetPointEleRecipe" />
+  <item id="INT50"  caption="Out_AlarmsEC" />
+  <item id="INT52"  caption="Out_WarningEC" />
+  <item id="INT48"  caption="Out_ElcaStatus" />
+  <item id="DINT54" caption="Out_SecsMancanti" isDouble="1" />
+  <item id="INT58"  caption="Out_ActVolt" />
+  <item id="INT60"  caption="Out_ActAmps" />
+  <item id="DINT4"  caption="Out_TotalAhBar_LOG" isDouble="1" />
+  <item id="INT62"  caption="ToPc_ActMicron"  rem="ActualMicronX10"  />
+  <item id="INT64"  caption="ToPc_ActSurface" rem="ActualSquareDecims" />
+  <item id="X86.4"  caption="isEarlyUseOfSecsRemaining_recolor"     isBool="1" />
+  <item id="INT8"   caption="ToElOxi_RetreatTime" rem="ReDeColorTimerSecs"     />
+</group>
+
+<group id="S7:[Main]DB82," dscr="ele_2" clone="ele_1" rem="oxi_2" />
+<group id="S7:[Main]DB83," dscr="ele_3" clone="ele_1" rem="oxi_3" />
+<group id="S7:[Main]DB84," dscr="ele_4" clone="ele_1" rem="oxi_4" />
+<group id="S7:[Main]DB85," dscr="ele_5" clone="ele_1" rem="ele_1" />
+
+<group id="S7:[Main]DB81," dscr="Recolor_1" rem="oxi_1" >
+  <item id="X82.4"  isBool="1" caption="ColorOK" />
+  <item id="X82.0"  isBool="1" caption="Recolor" />
+  <item id="X1.6"   isBool="1" caption="EndRecolorTime" />
+  <item id="X30.1"  isBool="1" caption="StartRecolorTimer" />
+  <item id="INT104" caption="Setup.PosColor[1]"  rem="020" />
+  <item id="INT106" caption="RecolorLastBar[1]" />
+</group>
+<group id="S7:[Main]DB82," dscr="Recolor_2" clone="Recolor_1" rem="oxi_2" />
+<group id="S7:[Main]DB83," dscr="Recolor_3" clone="Recolor_1" rem="oxi_3" />
+<group id="S7:[Main]DB84," dscr="Recolor_4" clone="Recolor_1" rem="oxi_4" />
+<group id="S7:[Main]DB85," dscr="Recolor_5" clone="Recolor_1" rem="ele_1" />
+<group id="S7:[Main]DB86," dscr="Recolor_6" clone="Recolor_1" rem="dye_1 DA VERIFICARE!!! forse va in DB58" />
+
+<group id="S7:[Main]DB58," dscr="interblock" >
+  <item id="INT%d" caption="interblock" low="40" size="2" count="2" />
+  <item id="INT48" caption="interblock" rem="perchè in futuro sarà 5/6"/>
+</group>
+
+<group id="S7:[CP1]" dscr="crane1_commands" >
+	<item id="DB31,INT%d" low="0"  count="4"  size="2" caption="crane commands (w/o)" rem="db31_spare_w8 ignored" /> 
+	<item id="DB31,INT%d" low="10" count="26" size="2" caption="crane commands (w/o)" /> 
+	<item id="DB31,X64.0" isBool="1" caption="VelPrelQuota1"  />
+	<item id="DB31,X64.1" isBool="1" caption="VelPrelQuota2"  />
+	<item id="DB31,X64.2" isBool="1" caption="VelPrelQuota3"  />
+	<item id="DB31,X64.3" isBool="1" caption="VelPrelQuota4"  />
+	<item id="DB31,X64.4" isBool="1" caption="VelPrelQuota5"  />
+	<item id="DB31,X64.5" isBool="1" caption="VelPrelAllinea" />
+	<item id="DB31,X64.6" isBool="1" caption="VelPrelAlto"    />
+	<item id="DB31,X65.0" isBool="1" caption="VelDepQuota1"   />
+	<item id="DB31,X65.1" isBool="1" caption="VelDepQuota2"   />
+	<item id="DB31,X65.2" isBool="1" caption="VelDepQuota3"   />
+	<item id="DB31,X65.3" isBool="1" caption="VelDepQuota4"   />
+	<item id="DB31,X65.4" isBool="1" caption="VelDepQuota5"   />
+	<item id="DB31,X65.5" isBool="1" caption="VelDepAllinea"  />
+	<item id="DB31,X65.6" isBool="1" caption="VelDepBasso"    />
+	<item id="DB31,X66.0" isBool="1" caption="VelRiscQuota1"  />
+	<item id="DB31,X66.1" isBool="1" caption="VelRiscQuota2"  />
+	<item id="DB31,X66.2" isBool="1" caption="VelRiscQuota3"  />
+	<item id="DB31,X66.3" isBool="1" caption="VelRiscAllinea" />
+	<item id="DB31,X66.4" isBool="1" caption="VelRiscBasso"   />
+	<item id="DB31,X68.0" isBool="1" caption="PendenzaPrel"   />
+	<item id="DB31,X68.1" isBool="1" caption="PendenzaDep"    />
+	<item id="DB31,X68.2" isBool="1" caption="AbilRisciacqui" />
+	<item id="DB31,X68.3" isBool="1" caption="PendRisciacqui" />
+	<item id="DB31,INT70" caption="NumRisciacqui"             />
+	<item id="DB31,INT72" caption="PausaControllo"            />
+	<item id="DB31,X76.0" isBool="1" caption="startIncarico"  />
+	<item id="DB31,X76.1" isBool="1" caption="startForzatura" />
+	<item id="DB31,X76.2" isBool="1" caption="startSemiautomatico1" />
+	<item id="DB31,X76.3" isBool="1" caption="startSemiautomatico2" />
+	<item id="DB31,INT78" caption="nuovaPosizione"            />
+	<item id="DB31,INT80" caption="posizioneMinima"           />
+	<item id="DB31,INT82" caption="posizioneMassima"          />
+	<item id="DB31,X77.7" isBool="1" caption="startCicalino"  />
+	<item id="DB31,X77.0" isBool="1" caption="datiCompleti"   />
+</group>
+
+<group id="S7:[CP1]" dscr="crane1_values" >
+	<item id="DB32,X3.0" caption="ReadyAuto"       isBool="1" />
+	<item id="DB32,X3.1" caption="AlarmON"         isBool="1" />
+	<item id="DB32,X3.2" caption="IncaricoInCorso" isBool="1" />
+	<item id="DB32,X3.5" caption="AutoMode"        isBool="1" />
+	<item id="DB32,INT4" caption="ReturnIncarico"             />
+	<item id="DB32,INT6" caption="ReturnForzatura"            />
+	<item id="DB32,INT8" caption="ReturnSemiautomatico"       />
+	<item id="DB4,INT0"  caption="PosCarroX10"                />
+	<item id="DB4,INT2"  caption="PosGancio1"                 />
+	<item id="DB4,INT4"  caption="PosGancio2"                 />
+	<item id="DB4,INT6"  caption="PassoIncAuto"               />
+	<item id="DB8,DINT0" caption="mm"                         />
+	<item id="DB51,X6.0" caption="salita"          isBool="1" />
+	<item id="DB51,X6.1" caption="discesa"         isBool="1" />
+	<item id="DB51,X6.2" caption="avanti"          isBool="1" />
+	<item id="DB51,X6.3" caption="indietro"        isBool="1" />
+	<item id="DB1,X5.1" caption="Hoist 1 top"      isBool="1" sinceRel="31xx" />
+	<item id="DB1,X5.2" caption="Hoist 1 bottom"   isBool="1" />
+	<item id="DB1,X5.3" caption="Hoist 1 middle"   isBool="1" />
+	<item id="DB1,X5.6" caption="Hoist 2 top"      isBool="1" />
+	<item id="DB1,X5.7" caption="Hoist 2 bottom"   isBool="1" />
+	<item id="DB1,X6.0" caption="Hoist 2 middle"   isBool="1" />
+</group>
+
+<group id="S7:[CP1]DB12," dscr="crane1_alarms" >
+	<item id="B%d" low="0" count="6" size="1" caption="crane alarms (r/o)" /> 
+</group>
+
+<group id="S7:[CP2]" dscr="crane2_commands" clone="crane1_commands" />
+<group id="S7:[CP2]" dscr="crane2_values"   clone="crane1_values"  />
+<group id="S7:[CP2]DB12" dscr="crane2_alarms"   clone="crane1_alarms" />
+
+<group id="S7:[CP3]" dscr="crane3_commands" clone="crane1_commands" />
+<group id="S7:[CP3]" dscr="crane3_values"   clone="crane1_values"  />
+<group id="S7:[CP3]DB12" dscr="crane3_alarms"   clone="crane1_alarms" />
+
+<group id="S7:[CP4]" dscr="crane4_commands" clone="crane1_commands" />
+<group id="S7:[CP4]" dscr="crane4_values"   clone="crane1_values"  />
+<group id="S7:[CP4]DB12" dscr="crane4_alarms"   clone="crane1_alarms" />
+
+<group id="S7:[CP5]" dscr="crane5_commands" clone="crane1_commands" />
+<group id="S7:[CP5]" dscr="crane5_values"   clone="crane1_values"  />
+<group id="S7:[CP5]DB12" dscr="crane5_alarms"   clone="crane1_alarms" />
+
+<group id="S7:[Main]DB12," dscr="main_alarms" >
+	<item id="B%d" low="0" size="1" count="40" caption="main alarms" />
+</group>
+
+</server> 
+</opcSimu>

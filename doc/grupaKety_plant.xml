@@ -1,0 +1,230 @@
+<plants>
+<plant name="grupaKety" ver="????" rem="" >
+  <lines>
+    <line id="1" interblock_safeMm="4000" XoffMm="1000" YoffMm="3000">
+    <positions>
+      <position id="1 " mm="0    " name="TRN CAR " />
+      <position id="2 " mm="730  " name="CNG LEV " disabled="1"/>
+      <position id="3 " mm="1480 " name="DEPOT 1 " />
+      <position id="4 " mm="2380 " name="DEPOT 2 " />
+      <position id="5 " mm="3280 " name="DEPOT 3 " />
+      <position id="6 " mm="4180 " name="DEPOT 4 " />
+      <position id="7 " mm="5080 " name="DEPOT 5 " />
+      <position id="8 " mm="5980 " name="DEPOT 6 " />
+      <position id="9 " mm="6880 " name="DEPOT 7 " />
+      <position id="10" mm="7780 " name="DEPOT 8 " />
+      <position id="11" mm="8680 " name="DEPOT 9 " />
+      <position id="12" mm="10080" name="TANK 1  "  dscr="FUTURE" />
+      <position id="13" mm="11430" name="TANK 2  "  dscr="FUTURE" />
+      <position id="14" mm="12780" name="TANK 3  "  dscr="FUTURE" />
+      <position id="15" mm="14720" name="TANK 4A "  dscr="ALKALINE DEGRE"  hasThermo="1"  rem="H" />
+      <position id="16" mm="16120" name="TANK 4B "  dscr="ALKALINE DEGRE" />
+      <position id="17" mm="18120" name="TANK 5  "  dscr="ETCHING  E6"     hasThermo="2"  rem="HC" />
+      <position id="18" mm="20170" name="TANK 6  "  dscr="ETCHING  E6"     hasThermo="3"  rem="HC" />
+      <position id="19" mm="22220" name="TANK 7  "  dscr="ETCHING  E6"     hasThermo="4"  rem="HC" />
+      <position id="20" mm="24220" name="TANK 8  "  dscr="STATIC RINSING"  hasThermo="5"  rem="HC" />
+      <position id="21" mm="25570" name="TANK 9  "  dscr="RINSING" />
+      <position id="22" mm="26680" name="TANK 10 "  dscr="RINSING" hasDevice="1" />
+      <position id="23" mm="28030" name="TANK 11 "  dscr="ACID NEUTRALI"   hasThermo="6"  rem="" />
+      <position id="24" mm="29140" name="TANK 12 "  dscr="ACID NEUTRALI"   hasThermo="7"  rem="" />
+      <position id="25" mm="31340" name="TANK 13 "  dscr="ANODIZING 1"     hasThermo="8"  rem="C" isEle="1" wasOxi="1" hasRecolor="1" />
+      <position id="26" mm="33700" name="TANK 14 "  dscr="ANODIZING 2"     hasThermo="9"  rem="C" isEle="1" wasOxi="1" hasRecolor="2" />
+      <position id="27" mm="36060" name="TANK 15 "  dscr="ANODIZING 3"     hasThermo="10" rem="C" isEle="1" wasOxi="1" hasRecolor="3" />
+      <position id="28" mm="38520" name="TANK 16 "  dscr="RINSING" />
+      <position id="29" mm="40980" name="TANK 17 "  dscr="ANODIZING 4"     hasThermo="11" rem="C" isEle="1" wasOxi="1" hasRecolor="4" />
+      <position id="30" mm="43500" name="TANK 18 "  dscr="ANODIZING 5 (F)" hasThermo="12" rem=""  _isEle="1" _wasOxi="1" _hasRecolor="1" />
+      <position id="31" mm="45960" name="TANK 19 "  dscr="RINSING" hasDevice="1" />
+      <position id="32" mm="47310" name="TANK 20 "  dscr="RINSING" />
+      <position id="33" mm="48420" name="TANK 21 "  dscr="RINSING" />
+      <position id="34" mm="50470" name="TANK 22 "  dscr="ELECTROCOL"      hasThermo="13" rem="HC" isEle="1" hasRecolor="5" />
+      <position id="35" mm="51970" name="TANK 23 "  dscr="RINSING" />
+      <position id="36" mm="53870" name="TANK 24 "  dscr="DYE GOLD"        hasThermo="14" rem="H" />
+      <position id="37" mm="55770" name="TANK 25 "  dscr="RINSING" />
+      <position id="38" mm="56880" name="TANK 26 "  dscr="RINSING" />
+      <position id="39" mm="58180" name="TANK 27 "  dscr="FUTURE" />
+      <position id="40" mm="59480" name="TANK 28 "  dscr="FUTURE" />
+      <position id="41" mm="60780" name="TANK 29 "  dscr="DEMI RINSING" />
+      <position id="42" mm="62130" name="TANK 30A"  dscr="HOT RINSING"     hasThermo="15" rem="H" />
+      <position id="43" mm="63030" name="TANK 30B"  dscr="HOT RINSING" />
+      <position id="44" mm="64380" name="TANK 31A"  dscr="HOT RINSING"     hasThermo="16" rem="H" />
+      <position id="45" mm="65280" name="TANK 31B"  dscr="HOT RINSING" />
+      <position id="46" mm="66630" name="TANK 32A"  dscr="HOT RINSING"     hasThermo="17" rem="H" />
+      <position id="47" mm="67530" name="TANK 32B"  dscr="HOT RINSING" />
+      <position id="48" mm="68880" name="TANK 33 "  dscr="HOT RINSING"     hasThermo="18" rem="H" />
+      <position id="49" mm="70340" name="DEPOT 10" />
+      <position id="50" mm="71240" name="DEPOT 11" />
+      <position id="51" mm="72140" name="DEPOT 12" />
+      <position id="52" mm="73040" name="DEPOT 13" />
+      <position id="53" mm="73940" name="DEPOT 14" />
+      <position id="54" mm="74840" name="DEPOT 15" />
+      <position id="55" mm="75740" name="DEPOT 16" />
+      <position id="56" mm="76640" name="DEPOT 17" />
+      <position id="57" mm="77540" name="DEPOT 18" />
+      <position id="58" mm="78440" name="DEPOT 19" />
+      <position id="59" mm="79340" name="DEPOT 20" />
+      <position id="60" mm="80240" name="DEPOT 21" />
+      <position id="61" mm="81140" name="DEPOT 22" />
+      <position id="62" mm="82060" name="CNG LEV"  disabled="1"  />
+      <position id="63" mm="82960" name="TRN CAR"  hasDevice="1" />
+      <position id="64" mm="84960" name="OUT LNE"  disabled="1"  />
+    </positions>
+    <aliases>
+      <alias id="1" positions="3-11"        rem="BUF-IN"         />
+      <alias id="2" positions="15,16"       rem="DEGRASING"         />
+      <alias id="3" positions="17,18,19"    rem="ETCHING"         />
+      <alias id="4" positions="23,24"       rem="NEUTRALIZATION"         />
+      <alias id="5" positions="25,26,27,29" rem="OXI" />
+      <alias id="6" positions="28,31"       rem="RINSING"         />
+      <alias id="7" positions="42-48"       rem="HOT SEALING"    />
+      <alias id="8" positions="49-61"       rem="BUF-OUT"         />
+    </aliases>
+    <cranes>
+      <crane id="1" name="Carro 1" area="1-22"  />
+      <crane id="2" name="Carro 2" area="21-34" />
+      <crane id="3" name="Carro 3" area="31-64" />
+    </cranes>
+    <gates>
+      <gate id="" name="Soda"    maxBars="999" gatePositions="6-7"   secsBetweenPickup="210" />
+    </gates>
+    </line>
+    <line id="2" interblock_safeMm="4000" XoffMm="1000" YoffMm="10000">
+    <positions>
+      <position id="65 " mm="88440" name="OUT OF LINE" disabled="1" />
+      <position id="66 " mm="85840" name="WORKSTATION 6" />
+      <position id="67 " mm="84700" name="DEPOT GRID" />
+      <position id="68 " mm="82960" name="UNLOAD TRANSFER" />
+      <position id="69 " mm="81230" name="DEPOT" />
+      <position id="70 " mm="80330" name="DEPOT" />
+      <position id="71 " mm="79430" name="DEPOT" />
+      <position id="72 " mm="78530" name="DEPOT" />
+      <position id="73 " mm="77630" name="DEPOT" />
+      <position id="74 " mm="76730" name="DEPOT" />
+      <position id="75 " mm="75830" name="DEPOT" />
+      <position id="76 " mm="74930" name="DEPOT" />
+      <position id="77 " mm="74030" name="DEPOT" />
+      <position id="78 " mm="73130" name="DEPOT" />
+      <position id="79 " mm="72230" name="DEPOT" />
+      <position id="80 " mm="71330" name="DEPOT" />
+      <position id="81 " mm="70430" name="DEPOT" />
+      <position id="82 " mm="69530" name="DEPOT" />
+      <position id="83 " mm="68630" name="DEPOT" />
+      <position id="84 " mm="67730" name="DEPOT" />
+      <position id="85 " mm="66830" name="DEPOT" />
+      <position id="86 " mm="65930" name="DEPOT" />
+      <position id="87 " mm="65030" name="DEPOT" />
+      <position id="88 " mm="64130" name="DEPOT" />
+      <position id="89 " mm="63230" name="DEPOT" />
+      <position id="90 " mm="62330" name="DEPOT" />
+      <position id="91 " mm="61430" name="DEPOT" />
+      <position id="92 " mm="60530" name="DEPOT" />
+      <position id="93 " mm="59630" name="DEPOT" />
+      <position id="94 " mm="56880" name="STATION 1 - POS 1 (HOLE)" />
+      <position id="95 " mm="55790" name="STATION 1 - POS 2 (GRID)" />
+      <position id="96 " mm="54460" name="DEPOT GRID" />
+      <position id="97 " mm="53560" name="DEPOT GRID" />
+      <position id="98 " mm="52660" name="DEPOT GRID" />
+      <position id="99 " mm="51760" name="DEPOT GRID" />
+      <position id="100" mm="50180" name="STATION 2 - POS 1 (HOLE)" />
+      <position id="101" mm="49090" name="STATION 2 - POS 2 (GRID)" />
+      <position id="102" mm="47760" name="DEPOT GRID" />
+      <position id="103" mm="46860" name="DEPOT GRID" />
+      <position id="104" mm="45960" name="DEPOT GRID" />
+      <position id="105" mm="45060" name="DEPOT GRID" />
+      <position id="106" mm="43730" name="STATION 3 - POS 1 (GRID)" />
+      <position id="107" mm="42640" name="STATION 3 - POS 2 (HOLE)" />
+      <position id="108" mm="41450" name="DEPOT GRID" />
+      <position id="109" mm="40550" name="DEPOT GRID" />
+      <position id="110" mm="39650" name="DEPOT GRID" />
+      <position id="111" mm="38750" name="DEPOT GRID" />
+      <position id="112" mm="37720" name="STATION 4 - POS 1 (GRID)" />
+      <position id="113" mm="36630" name="STATION 4 - POS 2 (HOLE)" />
+      <position id="114" mm="35430" name="DEPOT GRID" />
+      <position id="115" mm="34530" name="DEPOT GRID" />
+      <position id="116" mm="33630" name="DEPOT GRID" />
+      <position id="117" mm="32730" name="DEPOT GRID" />
+      <position id="118" mm="31700" name="STATION 5 - POS 1 (GRID)" />
+      <position id="119" mm="30610" name="STATION 5 - POS 2 (HOLE)" />
+      <position id="120" mm="27820" name="DEPOT" />
+      <position id="121" mm="26920" name="DEPOT" />
+      <position id="122" mm="26020" name="DEPOT" />
+      <position id="123" mm="25120" name="DEPOT" />
+      <position id="124" mm="24220" name="DEPOT" />
+      <position id="125" mm="23320" name="DEPOT" />
+      <position id="126" mm="22420" name="DEPOT" />
+      <position id="127" mm="21520" name="DEPOT" />
+      <position id="128" mm="20620" name="DEPOT" />
+      <position id="129" mm="19720" name="DEPOT" />
+      <position id="130" mm="18820" name="DEPOT" />
+      <position id="131" mm="17920" name="DEPOT" />
+      <position id="132" mm="17020" name="DEPOT" />
+      <position id="133" mm="16120" name="DEPOT" />
+      <position id="134" mm="15220" name="DEPOT" />
+      <position id="135" mm="14320" name="DEPOT" />
+      <position id="136" mm="13420" name="DEPOT" />
+      <position id="137" mm="12520" name="DEPOT" />
+      <position id="138" mm="11620" name="DEPOT" />
+      <position id="139" mm="10720" name="DEPOT" />
+      <position id="140" mm="9820 " name="DEPOT" />
+      <position id="141" mm="8920 " name="DEPOT" />
+      <position id="142" mm="8020 " name="DEPOT" />
+      <position id="143" mm="7120 " name="DEPOT" />
+      <position id="144" mm="6220 " name="DEPOT" />
+      <position id="145" mm="5320 " name="DEPOT" />
+      <position id="146" mm="4420 " name="DEPOT" />
+      <position id="147" mm="3520 " name="DEPOT" />
+      <position id="148" mm="2620 " name="DEPOT" />
+      <position id="149" mm="1720 " name="DEPOT" />
+      <position id="150" mm="0    " name="TRN CAR" />
+    </positions>
+    <cranes>
+      <crane id="4" name="Carro 4" area="49-85"  _dropArea="49-95" custom="ahaEmmi"  />
+      <crane id="5" name="Carro 5" area="71-108" _pickupArea="65-108" />
+    </cranes>
+    </line>
+  </lines>
+  <carriages>
+	  <carriage id="1" from="108" to="1"  name="loading carriage"   mmPerSec="2345" mmRun="10000" isLoading="1" />
+	  <carriage id="2" from="38"  to="49" name="unloading carriage" mmPerSec="3210" mmRun="10000" rem="controllare i mm"/>
+  </carriages>
+  <bars count="63" />
+  <isBOff positions="1, 6,7, 11,12, 20,21,22, 38, 46,47,48, 49,50, 71,72,75,78,81,84,85, 107,108" />
+  <isWS   positions="71,72,75,78,81,84,85" />
+  <isDone positions="51-70,86-90" />
+  <isToDo positions="2,86-106" />
+  <isGrid positions="66-70,86-90" rem="condivise con Done e toDo" />
+  <isTank positions="1,3-37, 39-48" />
+  <wasOxi positions="20,21" rem="future 22" />
+  <isEle  positions="12, 20,21, 26,28" />
+  <TraslLocks>
+    <TraslLock id="1"  positions="71"    />
+    <TraslLock id="2"  positions="85"    />
+    <TraslLock id="3"  positions="38,39" isLockedWhenFalse="1" />
+    <TraslLock id="4"  positions="12"    />
+    <TraslLock id="5"  positions="46"    />
+    <TraslLock id="6"  positions="47"    />
+  </TraslLocks>
+  <dosings>
+    <dosing id="1"  dscr="PDP4   " positions="6,7"       rem="NaOH" />
+    <dosing id="2"  dscr="PDP4.1 " positions="6,7"       rem="Additive" />
+    <dosing id="3"  dscr="PDP5   " positions="8"         rem="NaOH" />
+    <dosing id="4"  dscr="PDP9   " positions="12"        rem="Brightening" />
+    <dosing id="5"  dscr="PDP13  " positions="16"        rem="Alcaline desmutting" />
+    <dosing id="6"  dscr="PDP16  " positions="19"        rem="H2SO4" />
+    <dosing id="7"  dscr="PDP16.1" positions="19"        rem="Acid desmutting" />
+    <dosing id="8"  dscr="PDP0   " positions="20,21,22"  rem="H2SO4" />
+    <dosing id="9"  dscr="PDP23  " positions="26"        rem="H2SO4" />
+    <dosing id="10" dscr="PDP23.1" positions="26"        rem="Additive" />
+    <dosing id="11" dscr="PDP25  " positions="28"        rem="H2SO4" />
+    <dosing id="12" dscr="PDP25.1" positions="28"        rem="Additive" />
+    <dosing id="13" dscr="PDP36  " positions="40,41"     rem="Fluorhydric acid" />
+    <dosing id="14" dscr="PDP36.1" positions="40,41"     rem="Additive" />
+    <dosing id="15" dscr="PDP38  " positions="43,44,45"  rem="Additive" />
+  </dosings>
+
+  <recipes db="192.168.168.6:RECIPES" />
+
+</plant>
+</plants>
+
+
+
